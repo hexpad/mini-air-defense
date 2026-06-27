@@ -49,3 +49,7 @@ LCD V0 goes straight to GND. No potentiometer needed, contrast is fine.
 ## Notes
 
 Had two main issues during development. First, moving the tilt servo during tracking was causing the sensor readings to bounce — servo vibration was feeding back into the distance measurements and making the LCD flicker between messages. Fixed it by keeping tilt frozen once a target is locked. Second, single readings were too noisy near threshold boundaries. Averaging 5 readings per loop cycle smoothed it out completely. Also using a counter for both lock and neutralize so one bad reading doesn't throw off the whole system — target has to be out of range for 8 consecutive reads before it gives up.
+
+## Source Code
+
+https://github.com/hexpad/mini-air-defense/blob/main/Radar.ino
