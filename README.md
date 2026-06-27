@@ -1,3 +1,9 @@
+
+
+https://github.com/user-attachments/assets/486685fa-8425-4c30-8989-8b417a5baa84
+
+
+
 ## What it does
 
 Pan servo sweeps left to right while tilt steps down one row after each pass — raster pattern. When something shows up within 35 cm, servos freeze on that position and it switches to tracking mode. Target gets under 15 cm five times in a row and it triggers the neutralize sequence. Disappears for eight consecutive reads and it unlocks and starts scanning again.
