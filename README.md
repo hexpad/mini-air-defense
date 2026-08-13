@@ -4,7 +4,7 @@
 
 ## What it does
 
-Pan servo sweeps left to right while tilt steps down one row after each pass — raster pattern. When something shows up within 35 cm, servos freeze on that position and it switches to tracking mode. Target gets under 15 cm five times in a row and it triggers the neutralize sequence. Disappears for eight consecutive reads and it unlocks and starts scanning again.
+Pan servo sweeps left to right while tilt steps down one row after each pass raster pattern. When something shows up within 35 cm, servos freeze on that position and it switches to tracking mode. Target gets under 15 cm five times in a row and it triggers the neutralize sequence. Disappears for eight consecutive reads and it unlocks and starts scanning again.
 
 ---
 
@@ -41,14 +41,14 @@ LCD V0 goes straight to GND. No potentiometer needed, contrast is fine.
 
 ## Libraries
 
-- ESP32Servo — install from Library Manager
-- LiquidCrystal — already included in Arduino IDE
+- ESP32Servo - install from Library Manager
+- LiquidCrystal - already included in Arduino IDE
 
 ---
 
 ## Notes
 
-Had two main issues during development. First, moving the tilt servo during tracking was causing the sensor readings to bounce — servo vibration was feeding back into the distance measurements and making the LCD flicker between messages. Fixed it by keeping tilt frozen once a target is locked. Second, single readings were too noisy near threshold boundaries. Averaging 5 readings per loop cycle smoothed it out completely. Also using a counter for both lock and neutralize so one bad reading doesn't throw off the whole system — target has to be out of range for 8 consecutive reads before it gives up.
+Had two main issues during development. First, moving the tilt servo during tracking was causing the sensor readings to bounce servo vibration was feeding back into the distance measurements and making the LCD flicker between messages. Fixed it by keeping tilt frozen once a target is locked. Second, single readings were too noisy near threshold boundaries. Averaging 5 readings per loop cycle smoothed it out completely. Also using a counter for both lock and neutralize so one bad reading doesn't throw off the whole system target has to be out of range for 8 consecutive reads before it gives up.
 
 ## Source Code
 
